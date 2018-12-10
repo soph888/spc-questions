@@ -140,3 +140,40 @@ class Solution:
         for x in key:
             ans = (ans * 33 + ord(x)) % HASH_SIZE
         return ans
+
+
+
+
+
+
+
+5.(level 1)
+
+Invert a binary tree.
+
+  1         1
+ / \       / \
+2   3  => 3   2
+   /       \
+  4         4
+  
+ solution(python):
+ 
+ class TreeNode:
+    def __init__(self, val):
+        this.val = val
+        this.left, this.right = None, None
+        
+ class Solution:
+    # @param root: a TreeNode, the root of the binary tree
+    # @return: nothing
+    def invertBinaryTree(self, root):
+        # write your code here
+        self.dfs(root)
+    def dfs(self, node):
+        left = node.left
+        right = node.right
+        node.left = right
+        node.right = left
+        if (left!=None): self.dfs(left)
+        if (right!=None): self.dfs(right)
